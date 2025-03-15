@@ -44,15 +44,17 @@
         #error-message {
             color: yellow;
             height: 100%;
-            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             font-weight: bold;
-            visibility: hidden;
+            display: none;
+            position: absolute;
+            top: 0;
+            width: calc(100% - 20px);
 
             &.active {
-                visibility: visible;
+                display: flex;
             }
             
             i {

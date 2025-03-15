@@ -702,5 +702,18 @@
     "versions": {
         "php": "8.1"
     }
+  },
+  {
+    "active": true,
+    "code": "dev-portal",
+    "repo": "",
+    "dir": "private/lukes_development_poral",
+    "logo": "",
+    "type": "website",
+    "config": {
+        "on_start": [
+            "clear"
+        ]
+    }
   }
 ]
