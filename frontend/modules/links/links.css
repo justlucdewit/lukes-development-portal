@@ -1,0 +1,24 @@
+#links-wrapper {
+    display: flex;
+    gap: 20px;
+
+    section {
+        min-width: 200px;
+
+        a {
+            color: white;
+            display: flex;
+            text-decoration: none;
+            padding: 5px 0;
+
+            i {
+                margin-right: 10px;
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: yellow;
+            }
+        }
+    }
+}

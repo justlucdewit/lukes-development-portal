@@ -1,0 +1,110 @@
+#git-repositories {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 10px;
+
+    section {
+        height: calc(100vh - 230px);
+        overflow-y: auto;
+    }
+
+    #repo-filter {
+        background: none;
+        width: 100%;
+    }
+
+    #repo-links {
+        display: grid;
+
+        a {
+            padding: 5px;
+            margin: 5px 0;
+            background: #222;
+
+            white-space: nowrap;      /* Prevents text from wrapping */
+            overflow: hidden;         /* Hides overflow text */
+            text-overflow: ellipsis;  /* Adds "..." to indicate truncation */
+            width: calc(100%  - 10px);             /* Set a fixed width */
+
+            &.active {
+                color: yellow;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background: #333;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #repo-view {
+        position: relative;
+
+        #repo-view-sidebar {
+            width: 200px;
+            height: calc(100% - 60px);
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: grid;
+            grid-template-rows: 100px 1fr;
+
+            #repo-stats {
+                width: 100%;
+                margin-top: 10px;
+                height: max-content;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #repo-branches {
+                width: 100%;
+                height: 100%;
+
+                .branch-item {
+                    padding: 5px 0;
+                    background: #222;
+                    width: calc(100% - 25px);
+
+                    &.active {
+                        color: yellow;
+                        font-weight: bold;
+                    }
+
+                    &:hover {
+                        background: #333;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        #branch-history {
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            width: calc(100% - 250px);
+            height: calc(100% - 160px);
+        }
+
+        #actions {
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            display: flex;
+            overflow-x: hidden;
+            justify-content: space-around;
+
+            button {
+                padding: 5px;
+            }
+        }
+    }
+}

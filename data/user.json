@@ -1,0 +1,27 @@
+{
+    "name": "Luc de Wit",
+    "default_repo_prefix": "https://bitbucket.org/xingredient/",
+    "links": {
+        "Work": [
+            { "title": "Planning", "icon": "calendar_today", "url": "https://docs.google.com/spreadsheets/d/1SYTv6xjjMFT2lfd3UxOmrG_GxxIphL-bSjbWbnDoxC8/edit?gid=987913174#gid=987913174" },
+            { "title": "Uren schrijven", "icon": "schedule", "url": "http://10.0.0.177/uren/login.php" },
+            { "title": "Bitbucket", "icon": "graph_1", "url": "https://bitbucket.org/xingredient/workspace/repositories" },
+            { "title": "Forge", "icon": "host", "url": "https://forge.laravel.com/servers" },
+            { "title": "Rework", "icon": "beach_access", "url": "https://app.rework.nl/12904604803883" },
+            { "title": "Migratie plan", "icon": "backpack", "url": "https://xingr-my.sharepoint.com/:x:/r/personal/kerkhof_x-ingredient_nl/_layouts/15/Doc.aspx?sourcedoc=%7B80A0CCE1-5787-46B7-8750-B70591DB1206%7D&file=XidStaging%20migratieplan.xlsx&action=default&mobileredirect=true&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1736776006862&web=1" },
+            { "title": "AWS Hub", "icon": "nest_remote_comfort_sensor", "url": "https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1" }
+        ],
+        "Learning": [
+            { "title": "UI Examples", "icon": "host", "url": "https://www.unsection.com/" },
+            { "title": "Laravel Docs", "icon": "host", "url": "https://laravel.com/docs" },
+            { "title": "CSS Tricks", "icon": "host", "url": "https://css-tricks.com/" },
+            { "title": "Stackoverflow", "icon": "host", "url": "https://stackoverflow.com" }
+        ],
+        "News": [
+
+        ],
+        "Prive": [
+
+        ]
+    }
+}

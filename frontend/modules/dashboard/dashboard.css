@@ -1,0 +1,31 @@
+#dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    section {
+        width: calc(50vw - 180px);
+
+        h1 {
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-top: 0px;
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+/* Adjust grid layout for smaller screens */
+@media (max-width: 800px) {
+    #dashboard {
+        display: block;
+        section {
+            width: auto;
+        }
+    }
+}

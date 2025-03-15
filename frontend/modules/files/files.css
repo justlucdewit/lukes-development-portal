@@ -1,0 +1,43 @@
+#files {
+    #section-tabs .section-tab {
+        color: #888;
+
+        &.active {
+            color: white;
+        }
+
+        &:last-child {
+            color: white;
+        }
+    }
+
+    #explorer-content {
+        max-height: calc(100vh - 250px);
+        overflow: hidden;
+
+        .explorer-item {
+            padding: 5px 0;
+
+            #name {
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+
+            &.type-dir {
+                color: #888;
+            }
+
+            &.type-file {
+
+            }
+
+            &.active {
+                color: yellow;
+            }
+        }
+    }
+}

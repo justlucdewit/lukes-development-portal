@@ -1,0 +1,182 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background: #333;
+    color: #eee;
+    font-family: "Roboto", sans-serif;
+
+    .marked {
+        color: yellow !important;
+    }
+
+    header {
+        height: 50px;
+        background: #111;
+        display: flex;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 200px auto 120px;
+
+        #status-unconnected, #status-connected {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        #status-unconnected {
+            background: rgb(255, 0, 0);
+        }
+
+        #status-connected {
+            background: rgb(0, 255, 8);
+        }
+
+        #logo {
+            height: 30px;
+            width: 180px;
+
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        #title {
+            padding: 10px;
+        }
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 200px auto;
+        height: calc(100% - 50px);
+        position: relative;
+
+        aside {
+            background: #111;
+            overflow: auto;
+
+            #menu-list {
+                display: grid;
+
+                .menu-item {
+                    text-decoration: none;
+                    padding: 5px 0px 5px 10px;
+                    margin: 5px 10px;
+                    border-radius: 40px;
+                    display: flex;
+                    align-items: center;
+                    width: 85%;
+                    background: rgba(255, 255, 255, 0.05);
+                    color: #888;
+
+                    .material-icons, .material-symbols-outlined {
+                        margin-right: 5px;
+                    }
+
+                    &.todo {
+                        display: none;
+                    }
+                    
+                    &.active {
+                        background: rgba(255, 255, 255, 0.1);
+                        color: #eee;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+
+                    &.wip {
+                        outline: 1px dashed yellow;
+                    }
+                }
+            }
+        }
+
+        #main-section {
+            margin: 20px;
+
+            #module-title {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            #section-tabs {
+                display: flex;
+                padding-left: 10px;
+
+                .section-tab {
+                    background: #111;
+                    margin-left: 5px;
+                    border-radius: 10px 10px 0 0;
+                    margin-bottom: -20px;
+                    text-overflow: ellipsis;
+                    display: flex;
+                    width: 200px;
+
+                    #tab-name {
+                        width: 170px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        direction: rtl; /* Reverses text direction */
+                        text-align: left; /* Ensures text is readable */
+                        padding: 10px;
+
+                        &:hover {
+                            background: #FFF1;
+                            cursor: pointer;
+                            border-radius: 10px 0 0 0;
+                        }
+                    }
+
+                    #tab-closer {
+                        padding: 10px;
+
+                        &:hover {
+                            background: #FFF1;
+                            cursor: pointer;
+                            border-radius: 0 10px 0 0;
+                        }
+                    }
+                }
+            }
+
+            section {
+                background: #111;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 10px;
+                min-height: 30px;
+            }
+        }
+    }
+
+    input {
+        background: #333;
+        border: 1px solid #666;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        background: #333;
+        border: 1px solid #666;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+
+        &:hover {
+            cursor: pointer;
+            background: white;
+            color: #333;
+        }
+    }
+}

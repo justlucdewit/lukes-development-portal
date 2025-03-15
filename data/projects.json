@@ -1,0 +1,706 @@
+[
+  {
+    "active": false,
+    "code": "demo-nokia-digiops",
+    "repo": "demo_nokia_digiops",
+    "logo": "https://logos-world.net/wp-content/uploads/2020/10/Nokia-Logo.png",
+    "type": "demo",
+    "client": "nokia",
+    "config": {
+      "theme": "nokia",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "clear",
+        "rm -rf ./dist",
+        "npm run build",
+        "cd app",
+        "cd webapp",
+        "zip -r \"$(date +\"%Y_%m_%d_%H_%M\")_nokia_digital_operations.zip\" .",
+        "cd ../..",
+        "mkdir -p ./dist",
+        "build_file_name=\"$(date +\"%Y_%m_%d_%H_%M\")_nokia_digital_operations.zip\"",
+        "cp \"./app/webapp/$build_file_name\" ./dist",
+        "cp \"./app/webapp/$build_file_name\" \"/Volumes/personeel/development/luc/demo-builds/nokia_digital_operations/$build_file_name\"",
+        "rm \"./app/webapp/$build_file_name\"",
+        "echo \"Created build at development/luc/demo-builds/nokia_digital_operations/$build_file_name\""
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_nokia_digiops"
+  },
+  {
+    "active": false,
+    "code": "demo-nokia-ca",
+    "repo": "demo_nokia_core_automation",
+    "logo": "https://logos-world.net/wp-content/uploads/2020/10/Nokia-Logo.png",
+    "type": "demo",
+    "client": "nokia",
+    "config": {
+      "theme": "nokia",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "bash ~/projects/scripts/build-demo.sh nokia_core_automation"
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_nokia_core_automation"
+  },
+  {
+    "active": false,
+    "code": "demo-juniper-qs-vpn",
+    "repo": "demo_juniper_quantum_safe_vpn_mwc25",
+    "logo": "https://companieslogo.com/img/orig/JNPR_BIG.D-3e98987b.png?t=1720244492",
+    "type": "demo",
+    "client": "juniper",
+    "config": {
+      "theme": "juniper",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "bash ~/projects/scripts/build-demo.sh juniper_quantum_safe_vpn"
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_juniper_quantum_safe_vpn_mwc25"
+  },
+  {
+    "active": false,
+    "code": "demo-juniper-ci",
+    "repo": "demo_juniper_cloud_interlink_mwc25",
+    "logo": "https://companieslogo.com/img/orig/JNPR_BIG.D-3e98987b.png?t=1720244492",
+    "type": "demo",
+    "client": "juniper",
+    "config": {
+      "theme": "juniper",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "clear",
+        "rm -rf ./dist",
+        "npm run build",
+        "cd app",
+        "cd webapp",
+        "zip -r \"$(date +\"%Y_%m_%d_%H_%M\")_juniper_cloud_interlink.zip\" .",
+        "cd ../..",
+        "mkdir -p ./dist",
+        "build_file_name=\"$(date +\"%Y_%m_%d_%H_%M\")_juniper_cloud_interlink.zip\"",
+        "cp \"./app/webapp/$build_file_name\" ./dist",
+        "cp \"./app/webapp/$build_file_name\" \"/Volumes/personeel/development/luc/demo-builds/juniper_cloud_interlink/$build_file_name\"",
+        "rm \"./app/webapp/$build_file_name\"",
+        "echo \"Created build at development/luc/demo-builds/juniper_cloud_interlink/$build_file_name\""
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_juniper_cloud_interlink_mwc25"
+  },
+  {
+    "active": false,
+    "code": "demo-juniper-an",
+    "repo": "demo_juniper_autonomous_networks",
+    "logo": "https://companieslogo.com/img/orig/JNPR_BIG.D-3e98987b.png?t=1720244492",
+    "type": "demo",
+    "client": "juniper",
+    "config": {
+      "theme": "juniper",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "clear",
+        "rm -rf ./dist",
+        "npm run build",
+        "cd app",
+        "npm i",
+        "npx electron-builder -wl --x64",
+        "zip -r build-web.zip webapp",
+        "zip -r build-windows.zip dist/win-unpacked/*",
+        "zip -r build-linux.zip dist/linux-unpacked/*",
+        "cd ..",
+        "mkdir -p ./dist",
+        "mv ./app/build-web.zip ./dist",
+        "mv ./app/build-windows.zip ./dist",
+        "mv ./app/build-linux.zip ./dist"
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_juniper_autonomous_networks"
+  },
+  {
+    "active": false,
+    "code": "demo-juniper-smo-ric",
+    "repo": "demo_juniper_smo_ric",
+    "logo": "https://companieslogo.com/img/orig/JNPR_BIG.D-3e98987b.png?t=1720244492",
+    "type": "demo",
+    "client": "juniper",
+    "config": {
+      "theme": "juniper",
+      "on_start": [
+        "clear",
+        "tmux kill-pane -a",
+        "tmux split-window -h \"npm run dev\"",
+        "tmux resize-pane -R 40"
+      ],
+      "on_build": [
+        "clear",
+        "rm -rf ./dist",
+        "npm run build",
+        "cd app",
+        "npm i",
+        "npx electron-builder -wl --x64",
+        "zip -r build-web.zip webapp",
+        "zip -r build-windows.zip dist/win-unpacked/*",
+        "zip -r build-linux.zip dist/linux-unpacked/*",
+        "cd ..",
+        "mkdir -p ./dist",
+        "mv ./app/build-web.zip ./dist",
+        "mv ./app/build-windows.zip ./dist",
+        "mv ./app/build-linux.zip ./dist"
+      ]
+    },
+    "versions": {
+      "node": 18
+    },
+    "dir": "demo_juniper_smo_ric"
+  },
+
+  {
+    "active": false,
+    "code": "website-mars-doggpt",
+    "repo": "codecommit::us-east-1://mars-aws-stage@stage-doggpt-nl-xinnl",
+    "dir": "website_doggpt_nl",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mars_Incorporated_2019_logo.svg",
+    "type": "website",
+    "client": "mars",
+    "config": {
+        "on_start": [
+            "clear",
+            "tmux kill-pane -a",
+            "tmux split-window -h \"npm run dev\"",
+            "tmux resize-pane -R 40"
+        ]
+    },
+    "sites": {
+      "Live": "https://stage.doggpt.nl?pwd=x1ngredient40",
+      "Dev": "https://doggpt.nl"
+    },
+    "versions": {
+        "php": "8.2"
+    }
+  },
+  {
+    "active": false,
+    "code": "website-mars-mvdg",
+    "repo": "codecommit::us-east-1://mars-aws-stage@stage-maandvandegeverzorging-nl-xinnl",
+    "dir": "website_mvdg_nl",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mars_Incorporated_2019_logo.svg",
+    "type": "website",
+    "client": "mars",
+    "config": {
+        "on_start": [
+            "clear",
+            "tmux kill-pane -a",
+            "tmux split-window -h \"npm run dev\"",
+            "tmux resize-pane -R 40",
+            "sail create",
+            "sail start"
+        ]
+    },
+    "sites": {
+      "Live": "https://stage.maandvandegebitsverzorging.nl",
+      "Dev": "https://maandvandegebitsverzorging.nl"
+    },
+    "versions": {
+        "php": "8.3"
+    }
+  },
+  {
+    "active": true,
+    "code": "website-x-front",
+    "repo": "x-ingredient-company-website-frontend-2021",
+    "logo": "https://static.trustoo.nl/pros/68436/avatar_large",
+    "type": "website",
+    "versions": {
+      "php": "8.3",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://www.x-ingredient.nl",
+      "Dev": "http://x-ingredient.xid-dev.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1690042"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2576845"
+      }
+    },
+    "dir": "website_xingredient_nl"
+  },
+  {
+    "active": true,
+    "code": "website-x-back",
+    "repo": "x-ingredient-company-website-backend-2023",
+    "logo": "https://static.trustoo.nl/pros/68436/avatar_large",
+    "type": "website",
+    "versions": {
+      "php": "8.3",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://api-v2.x-ingredient.nl/admin",
+      "Dev": "http://api-v2.x-ingredient.xid-dev.com/admin"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "2334603"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2577087"
+      }
+    },
+    "dir": "website_apiv2_xingredient_nl"
+  },
+  {
+    "active": true,
+    "code": "website-dverte",
+    "repo": "dverte-company-website-2022",
+    "logo": "https://dverte.nl/img/logo-d-verte.png",
+    "type": "website",
+    "versions": {
+      "php": "8.0",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://dverte.nl/",
+      "Dev": "http://dverte.xid-dev.com/"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1803778"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2549769"
+      }
+    },
+    "dir": "website_dverte_nl"
+  },
+  {
+    "active": false,
+    "code": "website-keratwice",
+    "repo": "website_keratwice_excluton_nl",
+    "logo": "https://www.capitalspring.nl/upload/logos/Excluton-removebg-preview.png",
+    "type": "website",
+    "versions": {
+      "php": "8.0",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://keratwice.excluton.nl/excluton",
+      "Dev": "https://keratwice.excluton.xid-dev.com/excluton",
+      "Legacy": "https://keratwice.excluton.x-staging.com/"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1670618"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2557513"
+      },
+      "Legacy": {
+        "server": "393468",
+        "site": "1641710"
+      }
+    },
+    "dir": "website_keratwice_excluton_nl"
+  },
+  {
+    "active": true,
+    "code": "website-s59",
+    "repo": "spectrum59-company-website-2022",
+    "logo": "https://spectrumfiftynine.com/spectrum-fiftynine-og.png",
+    "type": "website",
+    "versions": {
+      "php": "8.3",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://spectrumfiftynine.com/",
+      "Dev": "http://spectrumfiftynine.xid-dev.com/"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1770344"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2557246"
+      }
+    },
+    "dir": "website_spectrumfiftynine_com"
+  },
+  {
+    "active": true,
+    "code": "website-tta",
+    "repo": "timthijssen-company-website-2025",
+    "logo": "https://timthijssen.nl/images/background-top.png",
+    "type": "website",
+    "versions": {
+      "php": "8.3",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://timthijssen.nl/",
+      "Dev": "http://timthijssen.xid-dev.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1828085"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2548411"
+      }
+    },
+    "dir": "website_timthijssen_nl"
+  },
+  {
+    "active": true,
+    "code": "website-s59-mlat",
+    "repo": "spectrum59-mlat-prototype-2023",
+    "logo": "https://spectrumfiftynine.com/spectrum-fiftynine-og.png",
+    "type": "website",
+    "versions": {
+      "node": "18"
+    },
+    "sites": {
+      "Dev": "http://mlat-prototype.spectrum59.xid-dev.com"
+    },
+    "forgeIds": {
+      "Dev": {
+        "server": "864580",
+        "site": "2581994"
+      }
+    },
+    "dir": "website_mlat-prototype_spectrumfiftynine_com"
+  },
+  {
+    "active": true,
+    "code": "website-qnt",
+    "repo": "jde-quality-needs-time-game-2021",
+    "logo": "https://cdn.cookielaw.org/logos/4fb0c621-af45-4863-a5b9-eaed8db83b0b/88401234-dcf5-4b2d-a2b4-e83884857ed6/2ae3fddd-5463-45f7-a200-3163cc6a1a0e/logo_main.png",
+    "type": "website",
+    "versions": {
+      "php": "7.4",
+      "node": "18"
+    },
+    "sites": {
+      "Dev": "http://demo-qualityneedstime.xid-dev.com",
+      "Legacy": "http://demo-qualityneedstime.x-staging.com/"
+    },
+    "forgeIds": {
+      "Dev": {
+        "server": "864580",
+        "site": "2582060"
+      },
+      "Legacy": {
+        "server": "393468",
+        "site": "2307796"
+      }
+    },
+    "dir": "website_qualityneedstime_com"
+  },
+  {
+    "active": true,
+    "code": "website-bss-dh",
+    "repo": "dehaas-brillen-spaar-systeem-2019",
+    "logo": "https://www.dehaasoptiek.nl/wp-content/themes/vizien%20%28bootstrap%205%29/images/logo-alt.svg",
+    "type": "website",
+    "versions": {
+      "php": "8.1",
+      "node": "18"
+    },
+    "sites": {
+      "Dev": "http://brillenspaarsysteem.dehaasoptiek.xid-dev.com"
+    },
+    "forgeIds": {
+      "Dev": {
+        "server": "864580",
+        "site": "2582082"
+      }
+    },
+    "dir": "website_brillenspaarsysteem_dehaasoptiek_nl"
+  },
+  {
+    "active": true,
+    "code": "website-rc-admin",
+    "repo": "royalcanin-canine-breed-universe-backend-2021",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Royal-Canin-Logo.svg/2560px-Royal-Canin-Logo.svg.png",
+    "type": "website",
+    "versions": {
+      "php": "8.0",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://royalcaninadmin.x-ingredient.nl",
+      "Dev": "http://admin.royalcanin.xid-dev.com",
+      "Legacy": "http://admin.royalcanin.xid-dev.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1905864"
+      },
+      "Dev": {
+        "server": "864580",
+        "site": "2585509"
+      },
+      "Legacy": {
+        "server": "393468",
+        "site": "2585509"
+      }
+    },
+    "dir": "website_admin_royalcanin_com"
+  },
+  {
+    "active": true,
+    "code": "website-kracht",
+    "repo": "kracht-company-website-2024",
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGpcKH1DAVcCg/company-logo_200_200/company-logo_200_200/0/1635860626990/kracht_recruitment_logo?e=2147483647&v=beta&t=mBauhqa4QfP_fjACsWh2ztSMz3183AmthUy5bq5e3oM",
+    "type": "website",
+    "config": {
+      "on_start": [
+          "bash ~/projects/scripts/run-website.sh"
+      ]
+    },
+    "versions": {
+      "php": "8.3",
+      "node": "18"
+    },
+    "sites": {
+      "Kracht Live": "https://vanuitkracht.nl",
+      "Kracht Dev": "https://dev.vanuitkracht.nl",
+      "TheKey Live": "https://thekeytolife.nl",
+      "TheKey Dev": "https://dev.thekeytolife.nl"
+    },
+    "forgeIds": {
+      "Kracht Live": {
+        "server": "836221",
+        "site": "2448225"
+      },
+      "Kracht Dev": {
+        "server": "836221",
+        "site": "2648107"
+      },
+      "TheKey Live": {
+        "server": "836221",
+        "site": "2465204"
+      },
+      "TheKey Dev": {
+        "server": "836221",
+        "site": "2648164"
+      }
+    },
+    "dir": "website_vanuitkracht_nl"
+  },
+  {
+    "active": true,
+    "code": "website-kracht-werkenbij",
+    "repo": "kracht-werken-bij-2024",
+    "dir": "website_werken_vanuitkracht_nl",
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGpcKH1DAVcCg/company-logo_200_200/company-logo_200_200/0/1635860626990/kracht_recruitment_logo?e=2147483647&v=beta&t=mBauhqa4QfP_fjACsWh2ztSMz3183AmthUy5bq5e3oM",
+    "type": "website",
+    "config": {
+      "on_start": [
+          "clear",
+          "tmux kill-pane -a",
+          "tmux split-window -h \"npm run dev\"",
+          "tmux resize-pane -R 40"
+      ]
+    },
+    "versions": {
+      "php": "8.0",
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://werken.vanuitkracht.nl",
+      "Dev": "http://dev.werken.vanuitkracht.nl"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "836221",
+        "site": "2561812"
+      },
+      "Dev": {
+        "server": "836221",
+        "site": "2648234"
+      }
+    }
+  },
+  {
+    "active": true,
+    "code": "website-rs-front",
+    "repo": "royalswinkels-company-website-frontend-2023",
+    "dir": "website_royalswinkels_com",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHu5yhZQJOSYQ/company-logo_200_200/company-logo_200_200/0/1707303736126/royalswinkels_logo?e=2147483647&v=beta&t=ENw88jeSy9PSF6DMSg7CL13xGvMMdN-86wJw2kRLUPY",
+    "type": "website",
+    "versions": {
+      "node": "18"
+    },
+    "sites": {
+      "Live": "https://royalswinkels.com",
+      "Dev": "https://dev.royalswinkels.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "744317",
+        "site": "2210722"
+      },
+      "Dev": {
+        "server": "744317",
+        "site": "2648570"
+      }
+    }
+  },
+  {
+    "active": true,
+    "code": "website-rs-back",
+    "repo": "royalswinkels-company-website-backend-2023",
+    "dir": "website_api_royalswinkels_com",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHu5yhZQJOSYQ/company-logo_200_200/company-logo_200_200/0/1707303736126/royalswinkels_logo?e=2147483647&v=beta&t=ENw88jeSy9PSF6DMSg7CL13xGvMMdN-86wJw2kRLUPY",
+    "type": "website",
+    "versions": {
+      "node": "18",
+      "php": "8.2"
+    },
+    "sites": {
+      "Live": "https://admin.royalswinkels.com",
+      "Dev": "https://dev.admin.royalswinkels.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "744317",
+        "site": "2241994"
+      },
+      "Dev": {
+        "server": "744317",
+        "site": "2648575"
+      }
+    }
+  },
+  {
+    "active": false,
+    "code": "website-si-back",
+    "repo": "swinkels-international-website-backend-2024",
+    "dir": "todo_swinkels_international_backend",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHu5yhZQJOSYQ/company-logo_200_200/company-logo_200_200/0/1707303736126/royalswinkels_logo?e=2147483647&v=beta&t=ENw88jeSy9PSF6DMSg7CL13xGvMMdN-86wJw2kRLUPY",
+    "type": "website",
+    "versions": {
+      "node": "18",
+      "php": "8.2"
+    },
+    "sites": {
+      
+    },
+    "forgeIds": {
+      
+    }
+  },
+  {
+    "active": false,
+    "code": "website-si-front",
+    "repo": "swinkels-international-website-frontend-2024",
+    "dir": "todo_swinkels_international_frontend",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHu5yhZQJOSYQ/company-logo_200_200/company-logo_200_200/0/1707303736126/royalswinkels_logo?e=2147483647&v=beta&t=ENw88jeSy9PSF6DMSg7CL13xGvMMdN-86wJw2kRLUPY",
+    "type": "website",
+    "versions": {
+      "node": "18"
+    },
+    "sites": {
+      "jp-live": "https://swinkels.jp/",
+      "legacy-jp": "https://jp.swinkels.x-staging.com/"
+    },
+    "forgeIds": {
+      "rs-live": {
+        "ip": "",
+        "server": "744317",
+        "site": "2606148"
+      },
+      "Legacy": {
+        "server": "393468",
+        "site": "2544534"
+      }
+    }
+  },
+  {
+    "active": true,
+    "code": "website-x-vacatures",
+    "repo": "x-ingredient-vacatures-2021",
+    "dir": "website_vacatures_x-ingredient_nl",
+    "logo": "https://static.trustoo.nl/pros/68436/avatar_large",
+    "type": "website",
+    "config": {
+        "on_start": [
+            "clear"
+        ]
+    },
+    "sites": {
+      "Live": "https://vacatures.x-ingredient.nl",
+      "Dev": "https://vacatures.x-ingredient.xid-dev.com"
+    },
+    "forgeIds": {
+      "Live": {
+        "server": "514234",
+        "site": "1690957"
+      },
+      "Dev": {
+        "server": "514234",
+        "site": "2648752"
+      }
+    },
+    "versions": {
+        "php": "8.1"
+    }
+  }
+]
