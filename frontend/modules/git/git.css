@@ -7,39 +7,59 @@
         height: calc(100vh - 230px);
         overflow-y: auto;
     }
-
+    
     #repo-filter {
         background: none;
         width: 100%;
     }
-
+    
     #repo-links {
         display: grid;
-
+        
         a {
             padding: 5px;
             margin: 5px 0;
             background: #222;
-
+            
             white-space: nowrap;      /* Prevents text from wrapping */
             overflow: hidden;         /* Hides overflow text */
             text-overflow: ellipsis;  /* Adds "..." to indicate truncation */
             width: calc(100%  - 10px);             /* Set a fixed width */
-
+            
             &.active {
                 color: yellow;
                 font-weight: bold;
             }
-
+            
             &:hover {
                 background: #333;
                 cursor: pointer;
             }
         }
     }
-
+    
     #repo-view {
         position: relative;
+        
+        #error-message {
+            color: yellow;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+            visibility: hidden;
+
+            &.active {
+                visibility: visible;
+            }
+            
+            i {
+                font-size: 100px;
+                margin-bottom: 30px;
+            }
+        }
 
         #repo-view-sidebar {
             width: 200px;
