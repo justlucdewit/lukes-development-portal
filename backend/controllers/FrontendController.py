@@ -18,3 +18,6 @@ class FrontendController:
         
     def load_portal_data(request, file):
         return file_response(f"data/{file}")
+    
+    def load_portal_repo_data(request, file):
+        return file_response(f"data/repos/{file}")

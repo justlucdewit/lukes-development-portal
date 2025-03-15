@@ -10,6 +10,7 @@ route.GET("/assets/<file>", FrontendController.load_portal_assets)
 route.GET("/scripts/<file>", FrontendController.load_portal_script)
 route.GET("/modules/<module>/<file>", FrontendController.load_portal_module)
 route.GET("/data/<file>", FrontendController.load_portal_data)
+route.GET("/data/repos/<file>", FrontendController.load_portal_repo_data)
 
 # Filesystem controller
 route.GET("/files", FileSystemController.get_all_files)
