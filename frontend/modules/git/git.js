@@ -1,6 +1,5 @@
 project_data = [];
 current_repo = null;
-current_branch = "master";
 
 async function could_not_load_repo() {
     const statsEl = document.querySelector("#repo-view-sidebar #repo-stats");
@@ -8,11 +7,13 @@ async function could_not_load_repo() {
     const branchesEl = document.querySelector("#repo-view-sidebar #repo-branches");
 
     statsEl.innerHTML = "";
+    branchesEl.innerHTML = "";
 
     const error_msg = document.getElementById("error-message");
     const error_msg_text = document.getElementById("error-message-text");
     error_msg.classList.add("active");
     error_msg_text.innerHTML = "Could not load repository";
+
 }
 
 function timeAgo(timestamp) {
@@ -95,19 +96,28 @@ async function load_repo(project) {
     `;
 
     // Load branches
-    const branches = [ ];
+    const branches = repo_data.branches.map(branch => branch.name)
+
     branchesEl.innerHTML = "";
     branches.forEach(branch => {
         const el = document.createElement("div");
+        const entry = repo_data.branches.filter(b => b.name === branch)[0];
         el.classList.add("branch-item");
 
-        if (branch === current_branch) {
+        if (entry.active) {
             el.classList.add("active");
         }
 
+        const last_commit_date = entry.last_commit_date.split(" ")[0];
+        el.title = `Last updated: ${last_commit_date === "unknown" ? "unknown" : timeAgo(last_commit_date)}`;
         el.innerHTML = `
             ${branch}
         `;
+
+        el.onclick = async () => {
+            await action_service.execute_action("switch-branch", [ project.code, branch ]);
+            await load_repo(project)
+        }
 
         branchesEl.appendChild(el);
     });
@@ -148,7 +158,6 @@ search_for_project = () => {
         if (!p.active) {
             return
         }
-
         
         if (query !== "" && ((!label.includes(query)) && (!p.repo.includes(query)))) {
             return
